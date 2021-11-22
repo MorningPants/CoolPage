@@ -55,7 +55,7 @@ section {
 .path{
     stroke-dasharray: 35;  
     stroke-dashoffset: 35;
-    animation: dash 2s linear forwards;
+    animation: dash 2s ease-in-out forwards;
 
 }
 
