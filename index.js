@@ -62,3 +62,15 @@ page.ontransitionend = () => {
   setTimeout(refresh, 500);
   console.log(view);
 };
+
+
+//Space View
+
+let wall = document.getElementById("wall");
+wall.className="wallBlock"
+wall.content="I make.."
+
+wall.onclick= () => {
+
+wall.className="wallBlock clicked"
+}
