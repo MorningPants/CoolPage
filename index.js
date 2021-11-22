@@ -27,12 +27,34 @@ function turnPage(event) {
   }
 }
 page.onwheel = turnPage;
+
+//for Mobile
+let touchY = 0;
+var src = document.getElementById("page");
+
+src.addEventListener('touchstart', function(e) {
+    touchY = e.touches[0].clientY
+    console.log(touchY)
+},false)
+
+page.ontouchmove = (event) => {
+    if (event.touches[0].clientY > touchY && view < maxview){
+        view += 1;
+        transitioning = true;
+    }
+    if (event.touches[0].clientY < touchY && view > 1) {
+        view -= 1;
+        transitioning = true;
+    }
+    page.className = `page${view}`;
+
+};
 refresh = function(){
     transitioning = false;
     console.log('time')
 }
 
 page.ontransitionend = () => {
-    setTimeout(refresh, 0)
+    setTimeout(refresh, 1000)
     console.log(view)
 }
