@@ -38,11 +38,11 @@ src.addEventListener('touchstart', function(e) {
 },false)
 
 page.ontouchmove = (event) => {
-    if (event.touches[0].clientY > touchY && view < maxview){
+    if (event.touches[0].clientY < touchY && view < maxview){
         view += 1;
         transitioning = true;
     }
-    if (event.touches[0].clientY < touchY && view > 1) {
+    if (event.touches[0].clientY > touchY && view > 1) {
         view -= 1;
         transitioning = true;
     }
